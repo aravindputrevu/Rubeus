@@ -7,6 +7,8 @@ on:
 jobs:
   label_issues:
     runs-on: ubuntu-latest
+    permissions:
+      issues: write
     steps:
       - uses: actions/checkout@v4.1.1
       - name: Add Triage Label
@@ -20,3 +22,4 @@ jobs:
               labels: ['triage']
             })
           github-token: ${{secrets.GITHUB_TOKEN}}
+         
